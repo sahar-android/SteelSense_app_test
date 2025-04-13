@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -55,6 +56,7 @@ fun StaticLineChartWithToggles(datasets: List<DataSet>) {
             // Chart Canvas
             Canvas(modifier = Modifier
                 .fillMaxWidth()
+                .padding(20.dp)
                 .weight(1f)) {
                 val chartWidth = size.width
                 val chartHeight = size.height
@@ -148,7 +150,7 @@ fun StaticLineChartWithToggles(datasets: List<DataSet>) {
                         // Draw the line
                         drawPath(
                             path = path,
-                            color = lineColors[index % lineColors.size], // Assign color dynamically
+                            color = colorList[index % colorList.size], // Assign color dynamically
                             style = Stroke(width = 4f)
                         )
 
